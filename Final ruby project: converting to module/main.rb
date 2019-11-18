@@ -10,10 +10,10 @@ require 'bcrypt'
 
 users = [
     { username: "falguni", password: "995577" },
-    { username: "jack", password: "fa1302" },
-    { username: "shaim", password: "fa1303" },
-    { username: "ali", password: "fa1304" },
-   { username: "mehnaz", password: "fa1305" }
+    { username: "jack", password: "9955" },
+    { username: "shaim", password: "9944" },
+    { username: "ali", password: "9933" },
+   { username: "mehnaz", password: "9922" }
 ]
 def create_hash_digest(password)
   BCrypt::Password.create(password)
@@ -42,7 +42,7 @@ def authenticate_user(username, password, list_of_users)
  "Credentials were not correct"
 end
 
-p authenticate_user("mehnaz", "fa1305", new_users)
+p authenticate_user("mehnaz", "9922", new_users)
 
 #"fa1309" will tell me creduentials were not correct. 
 

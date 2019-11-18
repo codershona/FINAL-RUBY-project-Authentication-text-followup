@@ -11,7 +11,7 @@ users = [
     { username: "falguni", password: "995577" },
     { username: "jack", password: "9955" },
     { username: "shaim", password: "9944" },
-    { username: "ali", password: "9911" },
+    { username: "ali", password: "9933" },
    { username: "mehnaz", password: "9922" }
 ]
 def create_hash_digest(password)
