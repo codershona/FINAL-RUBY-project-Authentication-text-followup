@@ -1,3 +1,4 @@
+# ----Authentication-Converting to module-----
 require 'bundler/inline'
 
 gemfile true do
@@ -18,7 +19,7 @@ def create_hash_digest(password)
   BCrypt::Password.create(password)
 end
 
-def verify_hash_digest(passwords)
+def verify_hash_digest(password)
   BCrypt::Password.new(password)
 end
 
@@ -29,7 +30,19 @@ def create_secure_users(list_of_users)
   list_of_users
 end 
 
-puts create_secure_users(users)
+new_users = create_secure_users(users)
+puts new_users
 
-# new_password = create_hash_digest("password1")
-# puts new_password =="password2"
+def authenticate_user(username, password, list_of_users)
+  list_of_users.each do |user_record|
+    if user_record[:username] == username && verify_hash_digest(user_record[:password]) == password
+     return user_record 
+    end
+ end 
+ "Credentials were not correct"
+end
+
+p authenticate_user("mehnaz", "9922", new_users)
+
+#"fa1309" will tell me creduentials were not correct. 
+
